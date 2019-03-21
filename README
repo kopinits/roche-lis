@@ -1,0 +1,10 @@
+Test Manager Module
+
+It has one single interface ( AbstractTestManagerModule<T extends CommonTestSuite>) with one single boolean executeTest(T object) method.
+This method makes the common validation on the common properties of all test types and can execute specific tests for each type of test
+
+To test some Hematology type, you need to create a new instance of AbstractTestManagerModule<Hematology> and call executeTest.
+This will execute common and specific test (if applies)
+
+To add new types of tests, just need to  create the new domain for this type, with specific attributes and a new implementation class like
+"NewTestTypeTMMImpl extends AbstractTestManagerModuleImpl<NewTestType>" and implement the executeSpecificTests with the specific behavior for this new type.
